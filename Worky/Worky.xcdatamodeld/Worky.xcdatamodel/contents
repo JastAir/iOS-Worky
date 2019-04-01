@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Task" representedClassName="Task" syncable="YES" codeGenerationType="class">
+        <attribute name="descr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="tracking" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Tracking" inverseName="task" inverseEntity="Tracking" syncable="YES"/>
+    </entity>
+    <entity name="Tracking" representedClassName="Tracking" parentEntity="Task" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="track_time" optional="YES" attributeType="Integer 64" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="task" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Task" inverseName="tracking" inverseEntity="Task" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Task" positionX="-250.40625" positionY="18.8046875" width="125.1640625" height="88"/>
+        <element name="Tracking" positionX="-42.15234375" positionY="67.94921875" width="128" height="88"/>
+    </elements>
 </model>

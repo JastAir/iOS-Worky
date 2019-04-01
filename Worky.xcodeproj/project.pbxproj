@@ -7,23 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7BFE68209CBA418C59B7D730 /* Pods_Worky.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE9253830AF454710EC6ED51 /* Pods_Worky.framework */; };
+		D021083B223F988600D9C8F8 /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D021083A223F988600D9C8F8 /* TaskListViewModel.swift */; };
+		D0210841223F99A500D9C8F8 /* ValidationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0210840223F99A500D9C8F8 /* ValidationViewModel.swift */; };
+		D0210843223F9A1E00D9C8F8 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0210842223F9A1E00D9C8F8 /* BaseViewModel.swift */; };
+		D02CFF262252A4FA00154C06 /* UIColor+DefineColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CFF252252A4FA00154C06 /* UIColor+DefineColors.swift */; };
+		D0303EB2223ED89700F090CA /* TaskDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0303EB1223ED89700F090CA /* TaskDetailsViewController.swift */; };
+		D042425B223FCEA100E80358 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042425A223FCEA100E80358 /* BaseModel.swift */; };
+		D05632E5224040CE0062AD23 /* TimeInterval+TimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05632E4224040CE0062AD23 /* TimeInterval+TimeFormat.swift */; };
+		D06758282252B28D0071C254 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06758272252B28D0071C254 /* UIViewController+Alerts.swift */; };
 		D08C9027222B09EC000F7B72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08C9026222B09EC000F7B72 /* AppDelegate.swift */; };
-		D08C9029222B09EC000F7B72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08C9028222B09EC000F7B72 /* ViewController.swift */; };
+		D08C9029222B09EC000F7B72 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08C9028222B09EC000F7B72 /* TaskListViewController.swift */; };
 		D08C902C222B09EC000F7B72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D08C902A222B09EC000F7B72 /* Main.storyboard */; };
 		D08C902F222B09EC000F7B72 /* Worky.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D08C902D222B09EC000F7B72 /* Worky.xcdatamodeld */; };
 		D08C9031222B09EC000F7B72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D08C9030222B09EC000F7B72 /* Assets.xcassets */; };
 		D08C9034222B09EC000F7B72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D08C9032222B09EC000F7B72 /* LaunchScreen.storyboard */; };
+		D08C9041222B20CF000F7B72 /* TaskListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08C9040222B20CF000F7B72 /* TaskListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		345B961FD20EA2E84750851E /* Pods-Worky.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Worky.release.xcconfig"; path = "Target Support Files/Pods-Worky/Pods-Worky.release.xcconfig"; sourceTree = "<group>"; };
+		4C9F35764EC8A6C530458F82 /* Pods-Worky.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Worky.debug.xcconfig"; path = "Target Support Files/Pods-Worky/Pods-Worky.debug.xcconfig"; sourceTree = "<group>"; };
+		D021083A223F988600D9C8F8 /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
+		D0210840223F99A500D9C8F8 /* ValidationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationViewModel.swift; sourceTree = "<group>"; };
+		D0210842223F9A1E00D9C8F8 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		D02CFF252252A4FA00154C06 /* UIColor+DefineColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+DefineColors.swift"; sourceTree = "<group>"; };
+		D0303EB1223ED89700F090CA /* TaskDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailsViewController.swift; sourceTree = "<group>"; };
+		D042425A223FCEA100E80358 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		D05632E4224040CE0062AD23 /* TimeInterval+TimeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+TimeFormat.swift"; sourceTree = "<group>"; };
+		D06758272252B28D0071C254 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		D08C9023222B09EC000F7B72 /* Worky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Worky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08C9026222B09EC000F7B72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D08C9028222B09EC000F7B72 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D08C9028222B09EC000F7B72 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		D08C902B222B09EC000F7B72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D08C902E222B09EC000F7B72 /* Worky.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Worky.xcdatamodel; sourceTree = "<group>"; };
 		D08C9030222B09EC000F7B72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D08C9033222B09EC000F7B72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D08C9035222B09EC000F7B72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D08C9040222B20CF000F7B72 /* TaskListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableViewCell.swift; sourceTree = "<group>"; };
+		EE9253830AF454710EC6ED51 /* Pods_Worky.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Worky.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +53,79 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BFE68209CBA418C59B7D730 /* Pods_Worky.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1CD387737E080D39206FBB07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE9253830AF454710EC6ED51 /* Pods_Worky.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D021083E223F996400D9C8F8 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
+		D021083F223F999100D9C8F8 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D0210840223F99A500D9C8F8 /* ValidationViewModel.swift */,
+				D0210842223F9A1E00D9C8F8 /* BaseViewModel.swift */,
+				D042425A223FCEA100E80358 /* BaseModel.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		D0303EB0223ED86C00F090CA /* Task Details */ = {
+			isa = PBXGroup;
+			children = (
+				D0303EB1223ED89700F090CA /* TaskDetailsViewController.swift */,
+			);
+			path = "Task Details";
+			sourceTree = "<group>";
+		};
+		D05632E3224040B20062AD23 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				D05632E4224040CE0062AD23 /* TimeInterval+TimeFormat.swift */,
+				D02CFF252252A4FA00154C06 /* UIColor+DefineColors.swift */,
+				D06758272252B28D0071C254 /* UIViewController+Alerts.swift */,
+			);
+			path = Extention;
+			sourceTree = "<group>";
+		};
+		D067582B2252B6D80071C254 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				D08C9028222B09EC000F7B72 /* TaskListViewController.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		D067582C2252B6E10071C254 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D021083A223F988600D9C8F8 /* TaskListViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
 		D08C901A222B09EC000F7B72 = {
 			isa = PBXGroup;
 			children = (
 				D08C9025222B09EC000F7B72 /* Worky */,
 				D08C9024222B09EC000F7B72 /* Products */,
+				DC9DE01BAC8F4318373A4C5F /* Pods */,
+				1CD387737E080D39206FBB07 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +140,62 @@
 		D08C9025222B09EC000F7B72 /* Worky */ = {
 			isa = PBXGroup;
 			children = (
+				D05632E3224040B20062AD23 /* Extention */,
+				D021083F223F999100D9C8F8 /* Base */,
+				D08C903D222B208E000F7B72 /* UI */,
 				D08C9026222B09EC000F7B72 /* AppDelegate.swift */,
-				D08C9028222B09EC000F7B72 /* ViewController.swift */,
-				D08C902A222B09EC000F7B72 /* Main.storyboard */,
 				D08C9030222B09EC000F7B72 /* Assets.xcassets */,
-				D08C9032222B09EC000F7B72 /* LaunchScreen.storyboard */,
 				D08C9035222B09EC000F7B72 /* Info.plist */,
 				D08C902D222B09EC000F7B72 /* Worky.xcdatamodeld */,
 			);
 			path = Worky;
+			sourceTree = "<group>";
+		};
+		D08C903D222B208E000F7B72 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D021083E223F996400D9C8F8 /* Validation */,
+				D08C9042222B3918000F7B72 /* Screens */,
+				D08C902A222B09EC000F7B72 /* Main.storyboard */,
+				D08C9032222B09EC000F7B72 /* LaunchScreen.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		D08C903E222B2099000F7B72 /* Task List */ = {
+			isa = PBXGroup;
+			children = (
+				D067582C2252B6E10071C254 /* viewModel */,
+				D067582B2252B6D80071C254 /* view */,
+				D08C903F222B20A5000F7B72 /* cell */,
+			);
+			path = "Task List";
+			sourceTree = "<group>";
+		};
+		D08C903F222B20A5000F7B72 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				D08C9040222B20CF000F7B72 /* TaskListTableViewCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		D08C9042222B3918000F7B72 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				D0303EB0223ED86C00F090CA /* Task Details */,
+				D08C903E222B2099000F7B72 /* Task List */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		DC9DE01BAC8F4318373A4C5F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4C9F35764EC8A6C530458F82 /* Pods-Worky.debug.xcconfig */,
+				345B961FD20EA2E84750851E /* Pods-Worky.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +205,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D08C9038222B09EC000F7B72 /* Build configuration list for PBXNativeTarget "Worky" */;
 			buildPhases = (
+				6A1FB99BD12A7411F06FEF6D /* [CP] Check Pods Manifest.lock */,
 				D08C901F222B09EC000F7B72 /* Sources */,
 				D08C9020222B09EC000F7B72 /* Frameworks */,
 				D08C9021222B09EC000F7B72 /* Resources */,
+				541C33698FC2446E379E4224 /* [CP] Embed Pods Frameworks */,
+				D02CFF2422529CD200154C06 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -133,14 +267,93 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		541C33698FC2446E379E4224 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Worky/Pods-Worky-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Worky/Pods-Worky-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A1FB99BD12A7411F06FEF6D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Worky-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D02CFF2422529CD200154C06 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" ffc277c10a8a13cebf1a31cb70a3d2f1a2e1a211 f34e3f39a832e9bc0885066ce5f9aea4158ad25eb1a3752c2444f42bbf19c50d\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D08C901F222B09EC000F7B72 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D08C9029222B09EC000F7B72 /* ViewController.swift in Sources */,
+				D08C9041222B20CF000F7B72 /* TaskListTableViewCell.swift in Sources */,
+				D042425B223FCEA100E80358 /* BaseModel.swift in Sources */,
+				D08C9029222B09EC000F7B72 /* TaskListViewController.swift in Sources */,
+				D0210841223F99A500D9C8F8 /* ValidationViewModel.swift in Sources */,
 				D08C902F222B09EC000F7B72 /* Worky.xcdatamodeld in Sources */,
+				D02CFF262252A4FA00154C06 /* UIColor+DefineColors.swift in Sources */,
+				D05632E5224040CE0062AD23 /* TimeInterval+TimeFormat.swift in Sources */,
+				D06758282252B28D0071C254 /* UIViewController+Alerts.swift in Sources */,
+				D0210843223F9A1E00D9C8F8 /* BaseViewModel.swift in Sources */,
+				D0303EB2223ED89700F090CA /* TaskDetailsViewController.swift in Sources */,
 				D08C9027222B09EC000F7B72 /* AppDelegate.swift in Sources */,
+				D021083B223F988600D9C8F8 /* TaskListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,17 +497,21 @@
 		};
 		D08C9039222B09EC000F7B72 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C9F35764EC8A6C530458F82 /* Pods-Worky.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ELDYT74352;
 				INFOPLIST_FILE = Worky/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.fdev.Worky;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fdev.workytimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -302,17 +519,21 @@
 		};
 		D08C903A222B09EC000F7B72 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 345B961FD20EA2E84750851E /* Pods-Worky.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ELDYT74352;
 				INFOPLIST_FILE = Worky/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.fdev.Worky;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fdev.workytimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
