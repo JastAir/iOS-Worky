@@ -18,6 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="MPb-Ea-g1L">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo_loading" translatesAutoresizingMaskIntoConstraints="NO" id="DiU-rw-T1M">
                                 <rect key="frame" x="77" y="264" width="260" height="369"/>
                                 <constraints>
@@ -31,8 +34,12 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DiU-rw-T1M" secondAttribute="bottom" constant="229" id="Ieg-mi-2cn"/>
                             <constraint firstItem="DiU-rw-T1M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="77" id="KUd-FQ-J1H"/>
+                            <constraint firstAttribute="bottom" secondItem="MPb-Ea-g1L" secondAttribute="bottom" id="Olg-ca-88C"/>
+                            <constraint firstItem="MPb-Ea-g1L" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-44" id="Yet-ML-T1r"/>
                             <constraint firstItem="DiU-rw-T1M" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="220" id="hs1-R8-MD1"/>
+                            <constraint firstItem="MPb-Ea-g1L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="n4t-Yq-0Gg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DiU-rw-T1M" secondAttribute="trailing" constant="77" id="oj5-F4-u1y"/>
+                            <constraint firstItem="MPb-Ea-g1L" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xue-pF-YjJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -43,6 +50,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="background" width="1153" height="2048"/>
         <image name="ic_logo_loading" width="259.5" height="369"/>
     </resources>
 </document>

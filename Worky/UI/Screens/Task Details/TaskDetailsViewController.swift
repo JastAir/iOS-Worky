@@ -42,8 +42,8 @@ class TaskDetailsViewController: UIViewController {
 		}
 		
 		self.viewModel.historyTableUpdate = { [weak self] in
+			self?.historyTableView.isHidden = false
 			self?.historyTableView.reloadData()
-			self?.historyTableView.invalidateIntrinsicContentSize()
 		}
 		
 		self.viewModel.loadTaskData(objectId: taskObject)
