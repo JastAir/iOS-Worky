@@ -11,6 +11,11 @@ import CoreData
 
 class TaskListViewModel: BaseViewModel {
 	
+	let dbInterface: DBInterface?
+	init(dbInterface: DBInterface) {
+		self.dbInterface = dbInterface
+	}
+	
 	// viewControllerActions
 	var isLoading: Bool = false {
 		didSet{
@@ -34,45 +39,19 @@ class TaskListViewModel: BaseViewModel {
 	var updateLoadingStatus: (()->())?
 	var updateTasksData: (()->())?
 	var showDetailsClosure: ((_ indexPath: IndexPath)->())?
-	var updateCellTimeLabel: ((_ timeInterval: TimeInterval) -> ())?
-	
-	// vars
-	var timerValue: TimeInterval = 0.0 {
-		didSet{
-			updateCellTimeLabel?(timerValue)
-		}
-	}
-	var timer: Timer?
 	
 	
-	// coreData
-//	let cdContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
-
-	func loadTasksList(){
-//		var resultTasks: [Task] = []
-//
-//		let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Task")
-//		do {
-//			let results = try cdContext?.fetch(request)
-//			let  dateCreated = results as! [Task]
-//
-//			for _datecreated in dateCreated {
-//				if _datecreated.title != nil && !(_datecreated.title?.isEmpty)! {
-//					resultTasks.append(_datecreated)
-//				}
-//			}
-//		}catch let err as NSError {
-//			onError(message: err.domain)
-//		}
-		
-//		taskListCellData.onNext(resultTasks)
+	func loadTasksList() {
+		tasksDataList = dbInterface?.tasksDao.getTaskList() ?? []
 	}
 	
 	func tableSelectRow(indexPath: IndexPath){
 		showDetailsClosure?(indexPath)
 	}
 	
-	
+	func stopTimerForTask(_ taskID: NSManagedObjectID, with timeInterval: TimeInterval){
+		dbInterface?.tasksDao.addTimeInterval(objectId: taskID, timeInterval: timeInterval)
+	}
 	
 	func alertAction(){
 		// TODO: setup alert action

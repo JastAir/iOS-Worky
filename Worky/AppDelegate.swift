@@ -14,6 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
 	
+	lazy var dbInterface: DBInterface = {
+		return DBInterface(cdContext: persistentContainer.viewContext)
+	}()
+	
 	// Core data containers
 	var taskContainer: Task?
 

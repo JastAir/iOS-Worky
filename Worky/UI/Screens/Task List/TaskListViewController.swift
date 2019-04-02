@@ -8,10 +8,11 @@
 
 import UIKit
 
-class TaskListViewController: UIViewController, TaskDetailsViewControllerDelegate {
+class TaskListViewController: UIViewController {
 	
 	lazy var viewModel: TaskListViewModel = {
-		return TaskListViewModel()
+		let dbInterface = (UIApplication.shared.delegate as! AppDelegate).dbInterface
+		return TaskListViewModel(dbInterface: dbInterface)
 	}()
 	
 	// MARK: - Outlets
@@ -44,7 +45,9 @@ class TaskListViewController: UIViewController, TaskDetailsViewControllerDelegat
 		viewModel.showDetailsClosure = { [weak self] indexPath in
 			let vc = self?.storyboard?.instantiateViewController(withIdentifier: "TaskDetailsVC") as! TaskDetailsViewController
 			vc.taskObject = self?.viewModel.tasksDataList[indexPath.item].objectID
-			vc.delegate = self
+			vc.didBack = { [weak self] in
+				self?.viewModel.loadTasksList()
+			}
 			self?.navigationController?.pushViewController(vc, animated: true)
 		}
 	}
@@ -52,7 +55,9 @@ class TaskListViewController: UIViewController, TaskDetailsViewControllerDelegat
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.destination is TaskDetailsViewController {
 			let vc = segue.destination as! TaskDetailsViewController
-			vc.delegate = self
+			vc.didBack = { [weak self] in
+				self?.viewModel.loadTasksList()
+			}
 		}
 	}
 	
@@ -61,14 +66,19 @@ class TaskListViewController: UIViewController, TaskDetailsViewControllerDelegat
 	}
 }
 
-extension TaskListViewController: UITableViewDataSource, TaskListTableViewCellDelegate {
+extension TaskListViewController: UITableViewDataSource {
 
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell: TaskListTableViewCell! = tableView.dequeueReusableCell(withIdentifier: "taskListCell") as? TaskListTableViewCell
+		cell.taskID = self.viewModel.tasksDataList[indexPath.item].objectID
 		cell.title.text = self.viewModel.tasksDataList[indexPath.item].title
 		cell.descr.text = self.viewModel.tasksDataList[indexPath.item].descr
 		cell.time.text = "00:00:00"
+		
+		cell.stopTimer = { [weak self] taskID, timeInterval in
+			self?.viewModel.stopTimerForTask(taskID, with: timeInterval)
+		}
 		
 		return cell
 	}
@@ -80,33 +90,6 @@ extension TaskListViewController: UITableViewDataSource, TaskListTableViewCellDe
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		self.viewModel.tableSelectRow(indexPath: indexPath)
-	}
-	
-	func startButtonAction(_ timeLabel: UILabel, sender: Any) {
-		let selfButton = sender as! UIButton
-		
-		if timer == nil {
-			timer = Timer.scheduledTimer(withTimeInterval: 0.001, repeats: true, block: {
-				self.timerValue += $0.timeInterval
-				timeLabel.text = self.timerValue.toTimeStringFormat()
-			})
-			timer?.fire()
-			
-			selfButton.setImage(UIImage(named: "ic_stop_btn"), for: .normal)
-			selfButton.setTitleColor(.dcWarningColor, for: .normal)
-		} else {
-			timer?.invalidate()
-			timer = nil
-			
-			selfButton.setImage(UIImage(named: "ic_start_btn"), for: .normal)
-			selfButton.setTitleColor(.dcPrimaryColor, for: .normal)
-			
-//			showAlertWithAction(
-//				title: "Save timer result for task: \"\(title.text ?? "UNKNOWN")\"?",
-//				message: "Timer data: \(timerValue.toTimeStringFormat())",
-//				action: {_ in}
-//			)
-		}
 	}
 }
 
