@@ -61,13 +61,19 @@ class TasksRepo: TasksDAO {
 	// add timeInterval for task
 	func addTimeInterval(objectId: NSManagedObjectID, timeInterval: TimeInterval) {
 		guard let context = cdContext else { return }
-		let task = context.object(with: objectId) as! Task
-		
-		let tracking = Tracking(context: context)
-		tracking.date = Date()
-		tracking.track_time = timeInterval
-		
-		task.addToTracking(tracking)
+		do {
+			let task = context.object(with: objectId) as! Task
+			
+			let tracking = Tracking(context: context)
+			tracking.date = Date()
+			tracking.track_time = timeInterval
+			
+			task.addToTracking(tracking)
+			
+			try context.save()
+		} catch {
+			print("[ERROR] TasksRepo: ObjectID(\(String(describing: objectId)))")
+		}
 	}
 	
 	// detele task by *NSManagedObjectID*

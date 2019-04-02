@@ -18,16 +18,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Loading_Screen_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="LiC-xI-VZT">
-                                <rect key="frame" x="39" y="168" width="336" height="560"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_logo_loading" translatesAutoresizingMaskIntoConstraints="NO" id="DiU-rw-T1M">
+                                <rect key="frame" x="77" y="264" width="260" height="369"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="E76-6C-THd"/>
+                                    <constraint firstAttribute="width" secondItem="DiU-rw-T1M" secondAttribute="height" multiplier="260:369" id="RmB-jC-yqb"/>
+                                    <constraint firstAttribute="height" constant="369" id="zue-4g-D9e"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="LiC-xI-VZT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="124" id="468-fu-mLj"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LiC-xI-VZT" secondAttribute="bottom" constant="134" id="Oqd-mU-9Yz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LiC-xI-VZT" secondAttribute="trailing" constant="39" id="XD0-D9-Xln"/>
-                            <constraint firstItem="LiC-xI-VZT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="39" id="qgq-ki-IvQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DiU-rw-T1M" secondAttribute="bottom" constant="229" id="Ieg-mi-2cn"/>
+                            <constraint firstItem="DiU-rw-T1M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="77" id="KUd-FQ-J1H"/>
+                            <constraint firstItem="DiU-rw-T1M" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="220" id="hs1-R8-MD1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DiU-rw-T1M" secondAttribute="trailing" constant="77" id="oj5-F4-u1y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,6 +43,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Loading_Screen_Logo" width="173" height="246"/>
+        <image name="ic_logo_loading" width="259.5" height="369"/>
     </resources>
 </document>

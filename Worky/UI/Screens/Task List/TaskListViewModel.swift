@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-class TaskListViewModel: BaseViewModel {
+class TaskListViewModel {
 	
 	let dbInterface: DBInterface?
 	init(dbInterface: DBInterface) {
@@ -55,9 +55,5 @@ class TaskListViewModel: BaseViewModel {
 	
 	func alertAction(){
 		// TODO: setup alert action
-	}
-	
-	func onError(message: String) {
-		print("taskListViewModel: \(message)")
 	}
 }

@@ -15,6 +15,6 @@ protocol TasksDAO {
 	func getTaskDetails(objectId: NSManagedObjectID) -> Task?
 	func addNewTask(task: Task)
 	func deleteTask(objectId: NSManagedObjectID)
-	func addTimeInterval(objectId: NSManagedObjectID, timeInterval: TimeInterval)
 	
+	func addTimeInterval(objectId: NSManagedObjectID, timeInterval: TimeInterval)
 }
