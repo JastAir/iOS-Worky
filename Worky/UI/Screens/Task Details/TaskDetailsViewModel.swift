@@ -16,6 +16,8 @@ class TaskDetailsViewModel {
 		self.dbInterface = dbInterface
 	}
 	
+	var objectId: NSManagedObjectID?
+	
 	var taskData: Task? {
 		didSet {
 			taskDetailData?()
@@ -31,6 +33,7 @@ class TaskDetailsViewModel {
 	var taskDetailData: (()->())?
 	var historyTableUpdate: (()->())?
 	var addNewTaskState: (()->())?
+	var didGoBack: (()->())?
 	
 	func loadTaskData(objectId: NSManagedObjectID?) {
 		print("[VM] taskData with objectID: \(String(describing: objectId))")
@@ -41,5 +44,23 @@ class TaskDetailsViewModel {
 		
 		taskData = dbInterface?.tasksDao.getTaskDetails(objectId: taskId)
 		historyListData = taskData?.tracking?.allObjects as! [Tracking]
+	}
+	
+	func navigationBarAction(title: String?, descr: String?) {
+		
+		if objectId == nil {
+			let taskData = Task(context: (dbInterface?.tasksDao.getContext())!)
+			taskData.title = title
+			taskData.descr = descr
+			
+			dbInterface?.tasksDao.addNewTask(task: taskData)
+		} else {
+			guard let taskData = dbInterface?.tasksDao.getTaskDetails(objectId: objectId!) else { return }
+			taskData.title = title
+			taskData.descr = descr
+			
+			dbInterface?.tasksDao.updateNewTask(task: taskData)
+		}
+		didGoBack?()
 	}
 }

@@ -16,6 +16,10 @@ class TasksRepo: TasksDAO {
 		self.cdContext = context
 	}
 
+	func getContext() -> NSManagedObjectContext? {
+		return cdContext
+	}
+	
 	// get task list
 	func getTaskList() -> [Task] {
 		var resultTasks: [Task] = []
@@ -56,6 +60,10 @@ class TasksRepo: TasksDAO {
 		} catch {
 			print("error")
 		}
+	}
+	
+	func updateNewTask(task: Task) {
+		
 	}
 	
 	// add timeInterval for task

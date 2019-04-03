@@ -38,7 +38,10 @@ class TaskListViewModel {
 	var showAlert: (() -> ())?
 	var updateLoadingStatus: (()->())?
 	var updateTasksData: (()->())?
+	
+	// show screens
 	var showDetailsClosure: ((_ indexPath: IndexPath)->())?
+	var showInfoClosure: ((_ indexPath: IndexPath)->())?
 	
 	
 	func loadTasksList() {
@@ -46,7 +49,7 @@ class TaskListViewModel {
 	}
 	
 	func tableSelectRow(indexPath: IndexPath){
-		showDetailsClosure?(indexPath)
+		showInfoClosure?(indexPath)
 	}
 	
 	func stopTimerForTask(_ taskID: NSManagedObjectID, with timeInterval: TimeInterval){

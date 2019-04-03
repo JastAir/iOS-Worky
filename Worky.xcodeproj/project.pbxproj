@@ -25,6 +25,10 @@
 		D08C9031222B09EC000F7B72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D08C9030222B09EC000F7B72 /* Assets.xcassets */; };
 		D08C9034222B09EC000F7B72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D08C9032222B09EC000F7B72 /* LaunchScreen.storyboard */; };
 		D08C9041222B20CF000F7B72 /* TaskListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08C9040222B20CF000F7B72 /* TaskListTableViewCell.swift */; };
+		D0C6A75722551778001890C5 /* TaskInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C6A75622551778001890C5 /* TaskInfoViewController.swift */; };
+		D0C6A75922551830001890C5 /* TaskInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C6A75822551830001890C5 /* TaskInfoViewModel.swift */; };
+		D0C6A75B2255255B001890C5 /* BaseDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C6A75A2255255B001890C5 /* BaseDAO.swift */; };
+		D0C6A75D22552DD6001890C5 /* NSObject+Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C6A75C22552DD5001890C5 /* NSObject+Vibration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +53,10 @@
 		D08C9033222B09EC000F7B72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D08C9035222B09EC000F7B72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D08C9040222B20CF000F7B72 /* TaskListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableViewCell.swift; sourceTree = "<group>"; };
+		D0C6A75622551778001890C5 /* TaskInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInfoViewController.swift; sourceTree = "<group>"; };
+		D0C6A75822551830001890C5 /* TaskInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInfoViewModel.swift; sourceTree = "<group>"; };
+		D0C6A75A2255255B001890C5 /* BaseDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDAO.swift; sourceTree = "<group>"; };
+		D0C6A75C22552DD5001890C5 /* NSObject+Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Vibration.swift"; sourceTree = "<group>"; };
 		EE9253830AF454710EC6ED51 /* Pods_Worky.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Worky.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -95,6 +103,7 @@
 				D05632E4224040CE0062AD23 /* TimeInterval+TimeFormat.swift */,
 				D02CFF252252A4FA00154C06 /* UIColor+DefineColors.swift */,
 				D06758272252B28D0071C254 /* UIViewController+Alerts.swift */,
+				D0C6A75C22552DD5001890C5 /* NSObject+Vibration.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -104,6 +113,7 @@
 			children = (
 				D067582E2253613D0071C254 /* Tasks */,
 				D0675833225363310071C254 /* DBInterface.swift */,
+				D0C6A75A2255255B001890C5 /* BaseDAO.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -189,10 +199,20 @@
 		D08C9042222B3918000F7B72 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				D0C6A75522551760001890C5 /* Task Info */,
 				D0303EB0223ED86C00F090CA /* Task Details */,
 				D08C903E222B2099000F7B72 /* Task List */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		D0C6A75522551760001890C5 /* Task Info */ = {
+			isa = PBXGroup;
+			children = (
+				D0C6A75622551778001890C5 /* TaskInfoViewController.swift */,
+				D0C6A75822551830001890C5 /* TaskInfoViewModel.swift */,
+			);
+			path = "Task Info";
 			sourceTree = "<group>";
 		};
 		DC9DE01BAC8F4318373A4C5F /* Pods */ = {
@@ -349,6 +369,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D08C9041222B20CF000F7B72 /* TaskListTableViewCell.swift in Sources */,
+				D0C6A75722551778001890C5 /* TaskInfoViewController.swift in Sources */,
+				D0C6A75D22552DD6001890C5 /* NSObject+Vibration.swift in Sources */,
 				D08C9029222B09EC000F7B72 /* TaskListViewController.swift in Sources */,
 				D067583C225392DE0071C254 /* HistoryTableViewCell.swift in Sources */,
 				D0675832225362530071C254 /* TasksRepo.swift in Sources */,
@@ -356,10 +378,12 @@
 				D02CFF262252A4FA00154C06 /* UIColor+DefineColors.swift in Sources */,
 				D0675830225361690071C254 /* TasksDAO.swift in Sources */,
 				D05632E5224040CE0062AD23 /* TimeInterval+TimeFormat.swift in Sources */,
+				D0C6A75B2255255B001890C5 /* BaseDAO.swift in Sources */,
 				D06758282252B28D0071C254 /* UIViewController+Alerts.swift in Sources */,
 				D0675838225384780071C254 /* TaskDetailsViewModel.swift in Sources */,
 				D0303EB2223ED89700F090CA /* TaskDetailsViewController.swift in Sources */,
 				D08C9027222B09EC000F7B72 /* AppDelegate.swift in Sources */,
+				D0C6A75922551830001890C5 /* TaskInfoViewModel.swift in Sources */,
 				D021083B223F988600D9C8F8 /* TaskListViewModel.swift in Sources */,
 				D0675834225363310071C254 /* DBInterface.swift in Sources */,
 			);

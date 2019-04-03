@@ -50,19 +50,28 @@ class TaskListViewController: UIViewController {
 			}
 			self?.navigationController?.pushViewController(vc, animated: true)
 		}
+		
+		viewModel.showInfoClosure = { [weak self] indexPath in
+			let vc = self?.storyboard?.instantiateViewController(withIdentifier: "TaskInfoVC") as! TaskInfoViewController
+			vc.taskObject = self?.viewModel.tasksDataList[indexPath.item].objectID
+			self?.present(vc, animated: true, completion: nil)
+		}
 	}
 	
-	@IBAction func longPressGestureAction(_ sender: Any) {
-		self.viewModel.showDetailsClosure?(self.tasksTableView.indexPathForSelectedRow!)
+	@objc func longPressGestureAction(longPressGestureRecognizer: UILongPressGestureRecognizer) {
+		
+		if longPressGestureRecognizer.state == UIGestureRecognizer.State.began {
+			let touchPoint = longPressGestureRecognizer.location(in: self.view)
+			if let indexPath = tasksTableView.indexPathForRow(at: touchPoint) {
+				
+				self.vibrate(.heavy)
+				self.viewModel.showDetailsClosure?(indexPath)
+			}
+		}
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if segue.destination is TaskDetailsViewController {
-			let vc = segue.destination as! TaskDetailsViewController
-			vc.didBack = { [weak self] in
-				self?.viewModel.loadTasksList()
-			}
-		}
+		self.vibrate(.light)
 	}
 	
 	func updateTable() {
@@ -83,6 +92,9 @@ extension TaskListViewController: UITableViewDataSource {
 		cell.stopTimer = { [weak self] taskID, timeInterval in
 			self?.viewModel.stopTimerForTask(taskID, with: timeInterval)
 		}
+		
+		let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPressGestureAction))
+		cell.addGestureRecognizer(longPressRecognizer)
 		
 		return cell
 	}

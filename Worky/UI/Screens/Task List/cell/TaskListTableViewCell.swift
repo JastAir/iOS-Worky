@@ -35,6 +35,9 @@ class TaskListTableViewCell: UITableViewCell {
 
 			selfButton.setImage(UIImage(named: "ic_stop_btn"), for: .normal)
 			selfButton.setTitleColor(.dcWarningColor, for: .normal)
+			
+			self.vibrate(.light)
+			
 		} else {
 			stopTimer?(taskID!, timerValue)
 			
@@ -47,6 +50,7 @@ class TaskListTableViewCell: UITableViewCell {
 			selfButton.setImage(UIImage(named: "ic_start_btn"), for: .normal)
 			selfButton.setTitleColor(.dcPrimaryColor, for: .normal)
 			
+			self.vibrate(.light)
 		}
 	}
 }

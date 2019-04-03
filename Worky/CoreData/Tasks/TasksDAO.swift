@@ -9,11 +9,12 @@
 import Foundation
 import CoreData
 
-protocol TasksDAO {
+protocol TasksDAO: BaseDAO {
 	
 	func getTaskList() -> [Task]
 	func getTaskDetails(objectId: NSManagedObjectID) -> Task?
 	func addNewTask(task: Task)
+	func updateNewTask(task: Task)
 	func deleteTask(objectId: NSManagedObjectID)
 	
 	func addTimeInterval(objectId: NSManagedObjectID, timeInterval: TimeInterval)

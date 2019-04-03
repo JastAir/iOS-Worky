@@ -40,7 +40,6 @@ class TaskDetailsViewController: UIViewController {
 		
 		self.viewModel.addNewTaskState = { [weak self] in
 			self?.title = "Add new task"
-			self?.navBarActionButton.image = UIImage(named: "ic_save")
 			self?.timelineLabel.isHidden = true
 			self?.historyTableView.isHidden = true
 		}
@@ -55,7 +54,19 @@ class TaskDetailsViewController: UIViewController {
 			self?.historyTableView.reloadData()
 		}
 		
+		self.viewModel.didGoBack = { [weak self] in
+			self?.didBack?()
+			self?.navigationController?.popViewController(animated: true)
+		}
+		
 		self.viewModel.loadTaskData(objectId: taskObject)
+	}
+	
+	@IBAction func navigationBarButtonAction(_ sender: Any) {
+		self.viewModel.navigationBarAction(
+			title: titleTextField.text,
+			descr: descriptionTextField.text
+		)
 	}
 }
 
