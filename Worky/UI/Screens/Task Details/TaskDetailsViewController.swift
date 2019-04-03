@@ -11,11 +11,14 @@ import CoreData
 
 
 class TaskDetailsViewController: UIViewController {
-
-	@IBOutlet weak var historyTableView: UITableView!
+	
+	@IBOutlet weak var navBarActionButton: UIBarButtonItem!
+	
 	@IBOutlet weak var titleTextField: UITextField!
 	@IBOutlet weak var descriptionTextField: UITextField!
-	@IBOutlet weak var navBarButton: UIBarButtonItem!
+	
+	@IBOutlet weak var timelineLabel: UILabel!
+	@IBOutlet weak var historyTableView: UITableView!
 	
 	lazy var viewModel: TaskDetailsViewModel = {
 		var cdContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
@@ -35,6 +38,13 @@ class TaskDetailsViewController: UIViewController {
 	
 	func bindUI() {
 		
+		self.viewModel.addNewTaskState = { [weak self] in
+			self?.title = "Add new task"
+			self?.navBarActionButton.image = UIImage(named: "ic_save")
+			self?.timelineLabel.isHidden = true
+			self?.historyTableView.isHidden = true
+		}
+		
 		self.viewModel.taskDetailData = { [weak self] in
 			let task = self?.viewModel.taskData
 			self?.titleTextField.text = task?.title
@@ -42,7 +52,6 @@ class TaskDetailsViewController: UIViewController {
 		}
 		
 		self.viewModel.historyTableUpdate = { [weak self] in
-			self?.historyTableView.isHidden = false
 			self?.historyTableView.reloadData()
 		}
 		

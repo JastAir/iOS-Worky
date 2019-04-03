@@ -30,10 +30,14 @@ class TaskDetailsViewModel {
 	
 	var taskDetailData: (()->())?
 	var historyTableUpdate: (()->())?
+	var addNewTaskState: (()->())?
 	
 	func loadTaskData(objectId: NSManagedObjectID?) {
 		print("[VM] taskData with objectID: \(String(describing: objectId))")
-		guard let taskId = objectId else { return }
+		guard let taskId = objectId else {
+			addNewTaskState?()
+			return
+		}
 		
 		taskData = dbInterface?.tasksDao.getTaskDetails(objectId: taskId)
 		historyListData = taskData?.tracking?.allObjects as! [Tracking]

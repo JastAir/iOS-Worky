@@ -52,6 +52,10 @@ class TaskListViewController: UIViewController {
 		}
 	}
 	
+	@IBAction func longPressGestureAction(_ sender: Any) {
+		self.viewModel.showDetailsClosure?(self.tasksTableView.indexPathForSelectedRow!)
+	}
+	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.destination is TaskDetailsViewController {
 			let vc = segue.destination as! TaskDetailsViewController
