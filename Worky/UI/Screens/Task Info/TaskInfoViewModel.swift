@@ -32,7 +32,6 @@ class TaskInfoViewModel {
 	var historyTableUpdate: (()->())?
 	
 	func loadTaskData(objectId: NSManagedObjectID?) {
-		print("[VM] taskData with objectID: \(String(describing: objectId))")
 		guard let taskId = objectId else { return }
 		
 		taskData = dbInterface?.tasksDao.getTaskDetails(objectId: taskId)

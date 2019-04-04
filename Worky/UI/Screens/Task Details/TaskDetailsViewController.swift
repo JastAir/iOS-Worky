@@ -13,6 +13,7 @@ import CoreData
 class TaskDetailsViewController: UIViewController {
 	
 	@IBOutlet weak var navBarActionButton: UIBarButtonItem!
+	@IBOutlet weak var deleteTaskButton: UIButton!
 	
 	@IBOutlet weak var titleTextField: UITextField!
 	@IBOutlet weak var descriptionTextField: UITextField!
@@ -42,6 +43,7 @@ class TaskDetailsViewController: UIViewController {
 			self?.title = "Add new task"
 			self?.timelineLabel.isHidden = true
 			self?.historyTableView.isHidden = true
+			self?.deleteTaskButton.isHidden = true
 		}
 		
 		self.viewModel.taskDetailData = { [weak self] in
@@ -54,12 +56,35 @@ class TaskDetailsViewController: UIViewController {
 			self?.historyTableView.reloadData()
 		}
 		
+		self.viewModel.taskDeleted = { [weak self] in
+			self?.didBack?()
+			self?.navigationController?.popViewController(animated: true)
+		}
+		
+		self.viewModel.showError = { [weak self] message in
+			self?.showSimpleAlert(title: message)
+		}
+		
 		self.viewModel.didGoBack = { [weak self] in
 			self?.didBack?()
 			self?.navigationController?.popViewController(animated: true)
 		}
 		
 		self.viewModel.loadTaskData(objectId: taskObject)
+	}
+	
+	@IBAction func deleteTaskButtonAction(_ sender: Any) {
+		
+		let alertVC = UIAlertController(
+			title: "Delete task?",
+			message: nil,
+			preferredStyle: .alert)
+		
+		alertVC.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+		alertVC.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (UIAlertAction) in
+			self.viewModel.deleteTask()
+		}))
+		self.present(alertVC, animated: true, completion: nil)
 	}
 	
 	@IBAction func navigationBarButtonAction(_ sender: Any) {
@@ -77,9 +102,12 @@ extension TaskDetailsViewController: UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell: HistoryTableViewCell! = tableView.dequeueReusableCell(withIdentifier: "historyCell") as? HistoryTableViewCell
-//		cell.dateLabel.text = self.viewModel.historyListData[indexPath.item].date
-		cell.dateLabel.text = "01.03.2019"
+		
+		let date = self.viewModel.historyListData[indexPath.item].date
+		
+		cell.dateLabel.text = date?.toStringFormat(type: .date)
 		cell.timeIntervalLabel.text = self.viewModel.historyListData[indexPath.item].track_time.toTimeStringFormat()
+		
 		return cell
 	}
 }

@@ -63,7 +63,14 @@ class TasksRepo: TasksDAO {
 	}
 	
 	func updateNewTask(task: Task) {
-		
+		do {
+			let object = cdContext?.object(with: task.objectID) as! Task
+			object.title = task.title
+			object.descr = task.descr
+			try cdContext?.save()
+		} catch {
+			print("Error update Task")
+		}
 	}
 	
 	// add timeInterval for task
@@ -86,6 +93,9 @@ class TasksRepo: TasksDAO {
 	
 	// detele task by *NSManagedObjectID*
 	func deleteTask(objectId: NSManagedObjectID) {
+		guard let context = cdContext else { return }
 		
+		let task = context.object(with: objectId) as! Task
+		cdContext?.delete(task)
 	}
 }

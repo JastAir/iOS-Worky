@@ -25,6 +25,7 @@
 		D08C9031222B09EC000F7B72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D08C9030222B09EC000F7B72 /* Assets.xcassets */; };
 		D08C9034222B09EC000F7B72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D08C9032222B09EC000F7B72 /* LaunchScreen.storyboard */; };
 		D08C9041222B20CF000F7B72 /* TaskListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08C9040222B20CF000F7B72 /* TaskListTableViewCell.swift */; };
+		D0B3274822566340004F1B3D /* NSDate+DateFormater.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B3274722566340004F1B3D /* NSDate+DateFormater.swift */; };
 		D0C6A75722551778001890C5 /* TaskInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C6A75622551778001890C5 /* TaskInfoViewController.swift */; };
 		D0C6A75922551830001890C5 /* TaskInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C6A75822551830001890C5 /* TaskInfoViewModel.swift */; };
 		D0C6A75B2255255B001890C5 /* BaseDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C6A75A2255255B001890C5 /* BaseDAO.swift */; };
@@ -53,6 +54,7 @@
 		D08C9033222B09EC000F7B72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D08C9035222B09EC000F7B72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D08C9040222B20CF000F7B72 /* TaskListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableViewCell.swift; sourceTree = "<group>"; };
+		D0B3274722566340004F1B3D /* NSDate+DateFormater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDate+DateFormater.swift"; sourceTree = "<group>"; };
 		D0C6A75622551778001890C5 /* TaskInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInfoViewController.swift; sourceTree = "<group>"; };
 		D0C6A75822551830001890C5 /* TaskInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInfoViewModel.swift; sourceTree = "<group>"; };
 		D0C6A75A2255255B001890C5 /* BaseDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDAO.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				D02CFF252252A4FA00154C06 /* UIColor+DefineColors.swift */,
 				D06758272252B28D0071C254 /* UIViewController+Alerts.swift */,
 				D0C6A75C22552DD5001890C5 /* NSObject+Vibration.swift */,
+				D0B3274722566340004F1B3D /* NSDate+DateFormater.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				D067583C225392DE0071C254 /* HistoryTableViewCell.swift in Sources */,
 				D0675832225362530071C254 /* TasksRepo.swift in Sources */,
 				D08C902F222B09EC000F7B72 /* Worky.xcdatamodeld in Sources */,
+				D0B3274822566340004F1B3D /* NSDate+DateFormater.swift in Sources */,
 				D02CFF262252A4FA00154C06 /* UIColor+DefineColors.swift in Sources */,
 				D0675830225361690071C254 /* TasksDAO.swift in Sources */,
 				D05632E5224040CE0062AD23 /* TimeInterval+TimeFormat.swift in Sources */,

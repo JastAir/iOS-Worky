@@ -53,8 +53,10 @@ extension TaskInfoViewController: UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell: HistoryTableViewCell! = tableView.dequeueReusableCell(withIdentifier: "historyCell") as? HistoryTableViewCell
-		//		cell.dateLabel.text = self.viewModel.historyListData[indexPath.item].date
-		cell.dateLabel.text = "01.03.2019"
+		
+		let date = self.viewModel.historyListData[indexPath.item].date
+		
+		cell.dateLabel.text = date?.toStringFormat(type: .date)
 		cell.timeIntervalLabel.text = self.viewModel.historyListData[indexPath.item].track_time.toTimeStringFormat()
 		return cell
 	}

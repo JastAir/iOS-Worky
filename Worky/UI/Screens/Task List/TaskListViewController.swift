@@ -71,6 +71,12 @@ class TaskListViewController: UIViewController {
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.destination is TaskDetailsViewController {
+			let vc = segue.destination as! TaskDetailsViewController
+			vc.didBack = { [weak self] in
+				self?.viewModel.loadTasksList()
+			}
+		}
 		self.vibrate(.light)
 	}
 	
