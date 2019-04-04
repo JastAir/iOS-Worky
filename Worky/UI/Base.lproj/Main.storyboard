@@ -61,9 +61,6 @@
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="cell_title"/>
-                                            </userDefinedRuntimeAttributes>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="00:00:12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iV-Ma-XBs">
                                             <rect key="frame" x="40.5" y="72.5" width="50" height="16"/>
@@ -92,9 +89,6 @@
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="cell_description"/>
-                                            </userDefinedRuntimeAttributes>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_timer" translatesAutoresizingMaskIntoConstraints="NO" id="jGb-Q8-96c">
                                             <rect key="frame" x="20" y="72.5" width="16" height="16"/>
@@ -119,9 +113,6 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="0iV-Ma-XBs" secondAttribute="bottom" constant="0.3333333333333286" id="v2O-4Z-B9a"/>
                                         <constraint firstItem="whT-dJ-1bI" firstAttribute="top" secondItem="iWu-RL-slP" secondAttribute="topMargin" id="y0i-cc-xe3"/>
                                     </constraints>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="cell_container"/>
-                                    </userDefinedRuntimeAttributes>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
@@ -129,10 +120,14 @@
                                     <outlet property="descr" destination="H8u-hB-cDI" id="eGX-t8-gLC"/>
                                     <outlet property="time" destination="0iV-Ma-XBs" id="7Yc-WN-ujM"/>
                                     <outlet property="title" destination="whT-dJ-1bI" id="lSv-iQ-2X3"/>
-                                    <segue destination="hAP-M5-r9w" kind="presentation" id="pCu-nK-f0z"/>
+                                    <segue destination="hAP-M5-r9w" kind="presentation" identifier="task_info_segue" id="pCu-nK-f0z"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                         <connections>
                             <outlet property="dataSource" destination="NQd-d9-Sb9" id="ysA-Ya-BFi"/>
                             <outlet property="delegate" destination="NQd-d9-Sb9" id="1l2-RT-Whe"/>
@@ -320,10 +315,10 @@
             </objects>
             <point key="canvasLocation" x="2013.0434782608697" y="505.43478260869568"/>
         </scene>
-        <!--Task detail-->
+        <!--Task info-->
         <scene sceneID="fMe-1k-g0R">
             <objects>
-                <viewController storyboardIdentifier="TaskInfoVC" title="Task detail" modalTransitionStyle="partialCurl" id="hAP-M5-r9w" customClass="TaskInfoViewController" customModule="Worky" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TaskInfoVC" title="Task info" modalTransitionStyle="partialCurl" id="hAP-M5-r9w" customClass="TaskInfoViewController" customModule="Worky" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ecH-bB-sf0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -388,6 +383,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="Bud-gL-8yf" id="3hg-mb-z0D"/>
+                                            <outlet property="timeIntervalLabel" destination="frA-ks-BXa" id="cvu-VG-O9G"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <userDefinedRuntimeAttributes>
@@ -405,9 +404,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="cell_title"/>
-                                </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HjD-ii-4wa">
                                 <rect key="frame" x="373" y="48" width="25" height="25"/>
@@ -425,9 +421,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="cell_description"/>
-                                </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -459,7 +452,6 @@
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <integer key="value" value="16"/>
                             </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="cell_container"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <toolbarItems/>

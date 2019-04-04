@@ -41,15 +41,15 @@ class TaskListViewModel {
 	
 	// show screens
 	var showDetailsClosure: ((_ indexPath: IndexPath)->())?
-	var showInfoClosure: ((_ indexPath: IndexPath)->())?
+	var showInfoClosure: ((_ indexPath: IndexPath, _ heroID: String?)->())?
 	
 	
 	func loadTasksList() {
 		tasksDataList = dbInterface?.tasksDao.getTaskList() ?? []
 	}
 	
-	func tableSelectRow(indexPath: IndexPath){
-		showInfoClosure?(indexPath)
+	func tableSelectRow(indexPath: IndexPath, heroID: String?){
+		showInfoClosure?(indexPath, heroID)
 	}
 	
 	func stopTimerForTask(_ taskID: NSManagedObjectID, with timeInterval: TimeInterval){

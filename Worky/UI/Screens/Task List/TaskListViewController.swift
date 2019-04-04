@@ -51,10 +51,9 @@ class TaskListViewController: UIViewController {
 			self?.navigationController?.pushViewController(vc, animated: true)
 		}
 		
-		viewModel.showInfoClosure = { [weak self] indexPath in
-			let vc = self?.storyboard?.instantiateViewController(withIdentifier: "TaskInfoVC") as! TaskInfoViewController
-			vc.taskObject = self?.viewModel.tasksDataList[indexPath.item].objectID
-			self?.present(vc, animated: true, completion: nil)
+		viewModel.showInfoClosure = { [weak self] indexPath, heroID in
+			let cell = self?.tasksTableView.cellForRow(at: indexPath) as! TaskListTableViewCell
+			self?.performSegue(withIdentifier: "task_info_segue", sender: cell)
 		}
 	}
 	
@@ -71,12 +70,23 @@ class TaskListViewController: UIViewController {
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		
+		if segue.destination is TaskInfoViewController {
+			guard let cell = sender as? TaskListTableViewCell else { return }
+			
+			let vc = segue.destination as! TaskInfoViewController
+			vc.taskObject = cell.taskID
+			vc.viewHeroID = cell.contentView.hero.id
+		}
+		
 		if segue.destination is TaskDetailsViewController {
 			let vc = segue.destination as! TaskDetailsViewController
 			vc.didBack = { [weak self] in
 				self?.viewModel.loadTasksList()
 			}
 		}
+		
+		
 		self.vibrate(.light)
 	}
 	
@@ -90,7 +100,13 @@ extension TaskListViewController: UITableViewDataSource {
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell: TaskListTableViewCell! = tableView.dequeueReusableCell(withIdentifier: "taskListCell") as? TaskListTableViewCell
+	
+		cell.contentView.hero.isEnabled = true
+		cell.contentView.hero.id = "hero-id-cell-\(indexPath.item)"
+		cell.contentView.hero.modifiers = [.translate(y:100)]
+		
 		cell.taskID = self.viewModel.tasksDataList[indexPath.item].objectID
+		
 		cell.title.text = self.viewModel.tasksDataList[indexPath.item].title
 		cell.descr.text = self.viewModel.tasksDataList[indexPath.item].descr
 		cell.time.text = "00:00:00"
@@ -111,7 +127,7 @@ extension TaskListViewController: UITableViewDataSource {
 
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		self.viewModel.tableSelectRow(indexPath: indexPath)
+		self.viewModel.tableSelectRow(indexPath: indexPath, heroID: "hero-id-cell-\(indexPath.item)")
 	}
 }
 
