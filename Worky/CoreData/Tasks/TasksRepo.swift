@@ -49,12 +49,6 @@ class TasksRepo: TasksDAO {
 	// add new task from *Task* model
 	func addNewTask(task: Task) {
 		do {
-			let entity = NSEntityDescription.entity(forEntityName: "Task", in: cdContext!)
-			
-			let taskObject = NSManagedObject(entity: entity!, insertInto: cdContext)
-			taskObject.setValue(task.title, forKey: "title")
-			taskObject.setValue(task.descr, forKey: "descr")
-			
 			try cdContext!.save()
 			
 		} catch {
@@ -64,9 +58,6 @@ class TasksRepo: TasksDAO {
 	
 	func updateNewTask(task: Task) {
 		do {
-			let object = cdContext?.object(with: task.objectID) as! Task
-			object.title = task.title
-			object.descr = task.descr
 			try cdContext?.save()
 		} catch {
 			print("Error update Task")
