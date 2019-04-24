@@ -101,9 +101,9 @@ extension TaskListViewController: UITableViewDataSource {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell: TaskListTableViewCell! = tableView.dequeueReusableCell(withIdentifier: "taskListCell") as? TaskListTableViewCell
 	
-		cell.contentView.hero.isEnabled = true
+		self.hero.isEnabled = true
 		cell.contentView.hero.id = "hero-id-cell-\(indexPath.item)"
-		cell.contentView.hero.modifiers = [.translate(y:100)]
+		cell.contentView.hero.modifiers = [.useGlobalCoordinateSpace, .rotate()]
 		
 		cell.taskID = self.viewModel.tasksDataList[indexPath.item].objectID
 		

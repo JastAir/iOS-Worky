@@ -24,7 +24,7 @@ class TaskInfoViewController: UIViewController {
 		didSet {
 			self.view.hero.isEnabled = true
 			self.view.hero.id = viewHeroID
-			self.view.hero.modifiers = [.translate(y:100)]
+			self.view.hero.modifiers = [.useGlobalCoordinateSpace, .rotate()]
 		}
 	}
 	
